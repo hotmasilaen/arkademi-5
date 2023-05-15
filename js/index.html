@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JavaScript bersama Arkademi</title>
+</head>
+<body>
+    <p id="nama"></p>
+
+    <script>
+        let nama = "Fulan";
+        nama = "Siti"
+        
+        const umur = 23
+        document.getElementById("nama").innerHTML = umur + ' ' + nama
+
+        const siswa = {
+            nama: "Budi",
+            alamat: {
+                provinsi: "Sumatera Barat",
+                kodepos: 12345,
+            },
+            hobby: ["Membaca", "nonton"]
+        };
+
+        const jurusan = [{nama: "Matematika", nama: "Biologi"}]
+
+        function sum(num1, num2) {
+            const result = num1 % num2
+            return result
+        }
+
+        const number1 = 50
+        const number2 = 10
+
+        // console.log(number1 >= number2);
+
+        const kalimat = 'Hari ini belajar \n Javascript!';
+
+        // console.log(kalimat.length);
+
+        // console.log(kalimat.toLowerCase());
+
+        if(number1 == 10){
+            console.log("Benar!");
+        }else if(number1 == 15){
+            console.log("Tepat sekali!");
+        }else if (number1 == 20) {
+            console.log("Bagus sekali!");
+        }else{
+            console.log("Salah!");
+        }
+
+        const nomorHari = 8;
+
+        switch (nomorHari) {
+            case 1 :
+                console.log("Hari ini hari Minggu");
+                break;
+            case 2:
+                console.log("Hari ini hari Senin");
+                break;
+            case 3:
+                console.log("Hari ini hari Selasa");
+                break;
+            case 4:
+                console.log("Hari ini hari Rabu");
+                break;
+            case 5:
+                console.log("Hari ini hari Kamis");
+                break;
+            default:
+                console.log("Hari ini hari Jumat");
+        }
+
+        for (var i = 4; i <= 5; i++){
+            console.log("Nomor: " + i);
+        }
+
+        const fruits = ["Banana", "Appel", "Orange", "Grape", "Papaya"]
+
+        for (var i = 0; i < fruits.length; i++) {
+            console.log("Nama Buah: " + fruits[i]);
+        }
+
+
+        const penjumlahan1 = 20 + 10
+        const penjumlahan2 = 40 + 10
+        const penjumlahan3 = 40 + 60
+
+        function penjumlahan(num1, num2) {
+            const result = num1 + num2
+            return result
+        }
+
+        penjumlahan(20, 10)
+        penjumlahan(40, 10)
+        penjumlahan(40, 60)
+
+        const fruits2 = {
+            name: "Banana",
+            price: "20000"
+        };
+
+        fruits2.name = "Apple"
+
+        console.log(fruits2.name);
+
+    </script>
+</body>
+</html>

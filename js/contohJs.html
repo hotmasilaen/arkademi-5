@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        /* Style untuk dropdown menu */
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			z-index: 1;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+        /* Style untuk toggle menu */
+		#toggle {
+			position: fixed;
+			top: 20px;
+			left: 20px;
+			z-index: 1;
+			cursor: pointer;
+			transition: opacity 0.3s ease;
+		}
+
+		#toggle:hover {
+			opacity: 0.7;
+		}
+
+		.bar {
+			width: 35px;
+			height: 5px;
+			margin: 6px 0;
+			background-color: #333;
+			transition: transform 0.3s ease;
+		}
+
+		/* Style untuk menu */
+		#menu {
+			position: fixed;
+			top: 0;
+			right: -300px;
+			width: 300px;
+			height: 100%;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			transition: right 0.3s ease;
+		}
+
+		#menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#menu li {
+			padding: 10px;
+			border-bottom: 1px solid #ccc;
+			text-align: right;
+		}
+    </style>
+</head>
+<body>
+    <!-- <div id="myDiv">Ini adalah sebuah div</div>
+
+    <div class="dropdown">
+        <button>Klik saya</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div> -->
+
+
+    <div id="toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Menu satu</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Mengubah warna background dari #myDiv menjadi merah
+        document.getElementById("myDiv").style.backgroundColor = "red";
+
+        // Mengubah ukuran font dari #myDiv menjadi 32px
+        document.getElementById("myDiv").style.fontSize = "32px";
+
+        // Mengubah teks-align dari #myDiv menjadi left
+        document.getElementById("myDiv").style.textAlign = "left";
+    </script>
+
+    <script>
+        // Mendapatkan elemen button
+        var button = document.querySelector("button");
+
+        // Mendapatkan elemen dropdown-content
+        var dropdownContent = document.querySelector(".dropdown-content");
+
+        // Menambahkan event listener click pada button
+        button.addEventListener("click", function () {
+            // Jika dropdown-content sedang ditampilkan, sembunyikan
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                // Jika dropdown-content sedang disembunyikan, tampilkan
+                dropdownContent.style.display = "block";
+            }
+        });
+    </script>
+
+
+
+    <script>
+        // Mendapatkan elemen toggle
+        var toggle = document.getElementById("toggle");
+
+        // Mendapatkan elemen menu
+        var menu = document.getElementById("menu");
+
+        // Menambahkan event listener click pada toggle
+        toggle.addEventListener("click", function () {
+            // Jika menu sedang ditampilkan, sembunyikan
+            if (menu.style.right === "0px") {
+                menu.style.right = "-300px";
+                toggle.style.position = "fixed";
+            } else {
+                // Jika menu sedang disembunyikan, tampilkan
+                menu.style.right = "0px";
+                toggle.style.position = "fixed";
+            }
+        });
+    </script>
+</body>
+</html>

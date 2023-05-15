@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease;
+        }
+
+        .box:hover {
+        width: 200px;
+        height: 200px;
+        transform: translate(50px, 50px);
+        }
+
+        .box-2 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        transition: transform 0.5s ease;
+        }
+
+        .box-2:hover {
+        transform: rotate(45deg);
+        }
+
+        button {
+        background-color: blue;
+        transition: background-color 0.5s ease;
+        }
+
+        button:hover {
+        background-color: red;
+        }
+
+
+        .image {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        }
+
+        .image img {
+        transition: transform 0.3s ease;
+        }
+
+        .image:hover img {
+        transform: scale(1.2);
+        filter: brightness(80%) blur(2px);
+        }
+
+        .image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        }
+
+        .image:hover::before {
+        opacity: 1;
+        }
+
+
+        .wave {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        background-color: #00bfff;
+        }
+
+        .wave:before,
+        .wave:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #fff;
+        transform-origin: bottom;
+        animation: wave 2s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+        }
+
+        .wave:before {
+        z-index: 1;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .wave:after {
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @keyframes wave {
+        0% {
+            transform: scaleY(1);
+        }
+        50% {
+            transform: scaleY(0.5);
+        }
+        100% {
+            transform: scaleY(1);
+        }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box"></div> -->
+    <!-- <div class="box-2"></div> -->
+    <!-- <button>Submit</button> -->
+    <!-- <div class="image">
+
+        <img src="./image-new-hero-comp.c0ee2441.png" />
+    </div> -->
+
+    <div class="wave">
+        <!-- Konten lainnya disini -->
+    </div>
+</body>
+</html>
